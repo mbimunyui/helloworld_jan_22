@@ -7,7 +7,7 @@ pipeline {
     environment {
     registry = '704819634910.dkr.ecr.us-east-1.amazonaws.com/devop_repository'
     registryCredential = 'jenkins-ecr'
-    dockerImagemage = ''
+    dockerImage = ''
   }
     stages {
         stage('Checkout'){
@@ -29,7 +29,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script{
-                    dockerImage=docker.Build registry+":$BUILD_NUMBER"
+                    dockerImage=docker.Build registry + ":$BUILD_NUMBER"
                 }
             }
         }
