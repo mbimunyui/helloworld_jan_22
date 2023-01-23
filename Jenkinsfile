@@ -1,3 +1,4 @@
+library identifier: 'genric.groovy@master', retriever:          modernSCM([$class: 'GitSCMSource', credentialsId: '', remote: 'https://github.com/mani1soni/jenkins-practice.git', traits: [[$class: 'jenkins.plugins.git.traits.BranchDiscoveryTrait']]])
 pipeline {
     agent any
     tools{
@@ -16,8 +17,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean'
-                sh 'mvn package'
+                sh 'mvn clean package'
+                
             }
         }
         stage('Test') {
